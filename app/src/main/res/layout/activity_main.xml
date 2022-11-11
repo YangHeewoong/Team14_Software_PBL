@@ -8,23 +8,41 @@
     tools:context=".MainActivity">
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/recruit_btn"
         android:layout_width="250dp"
+=======
+        android:id="@+id/btn_1"
+        android:layout_width="200dp"
+>>>>>>> 12cae84d21cbca9deba033d7160bd0587478fd5d
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
         android:backgroundTint="@color/teal_700"
+<<<<<<< HEAD
         android:text="식구 모집"
         android:textSize="40sp" />
 
     <Button
         android:id="@+id/search_btn"
         android:layout_width="250dp"
+=======
+        android:text="방 생성"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="200dp"
+>>>>>>> 12cae84d21cbca9deba033d7160bd0587478fd5d
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/teal_700"
+<<<<<<< HEAD
         android:text="식구 찾기"
+=======
+        android:text="방 찾기"
+>>>>>>> 12cae84d21cbca9deba033d7160bd0587478fd5d
         android:textSize="40sp" />
 
 </LinearLayout>

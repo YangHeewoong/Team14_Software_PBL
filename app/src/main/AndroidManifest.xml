@@ -14,6 +14,7 @@
         android:theme="@style/Theme.Demo"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".Register"
             android:exported="false" />
         <activity
@@ -27,6 +28,15 @@
             android:exported="false" />
         <activity
             android:name=".Recruit_category"
+=======
+            android:name=".ForthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecondActivity"
+>>>>>>> 12cae84d21cbca9deba033d7160bd0587478fd5d
             android:exported="false" />
         <activity
             android:name=".MainActivity"
