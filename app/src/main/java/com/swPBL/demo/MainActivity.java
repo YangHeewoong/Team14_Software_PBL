@@ -9,29 +9,28 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_1;
-    private Button btn_2;
-    //a
+    private Button recruit_btn;
+    private Button search_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
-        btn_1 = findViewById(R.id.btn_1);
-        btn_1.setOnClickListener(new View.OnClickListener() {
+        recruit_btn = findViewById(R.id.recruit_btn);
+        recruit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this , SecondActivity.class);
+                Intent intent = new Intent(MainActivity.this , Recruit_category.class);
                 startActivity(intent);
             }
         });
 
-        btn_2 = findViewById(R.id.btn_2);
-        btn_2.setOnClickListener(new View.OnClickListener() {
+        search_btn = findViewById(R.id.search_btn);
+        search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this , ThirdActivity.class);
+                Intent intent = new Intent(MainActivity.this , Search_category.class);
                 startActivity(intent);
             }
         });

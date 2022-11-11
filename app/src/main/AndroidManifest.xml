@@ -14,13 +14,19 @@
         android:theme="@style/Theme.Demo"
         tools:targetApi="31">
         <activity
-            android:name=".ForthActivity"
+            android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".ThirdActivity"
+            android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".View_list"
+            android:exported="false" />
+        <activity
+            android:name=".Search_category"
+            android:exported="false" />
+        <activity
+            android:name=".Recruit_category"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
