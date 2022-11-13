@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context=".Register">
 
-
     <EditText
-        android:id="@+id/id_input"
+        android:id="@+id/email_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:hint="id"
+        android:hint="email"
         android:inputType="textEmailAddress"
         />
 

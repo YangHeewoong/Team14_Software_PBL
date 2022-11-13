@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity
 {
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabaseRef;
-    private EditText id_input, pwd_input;
+    private EditText email_input, pwd_input;
     private Button login_btn, register_btn;
 
     @Override
@@ -34,39 +34,39 @@ public class Login extends AppCompatActivity
         mFirebaseAuth = FirebaseAuth.getInstance();     // FirebaseAuth 인스턴스를 가져옴
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
 
-        login_btn = (Button) findViewById(R.id.login_btn);
-        register_btn = (Button) findViewById(R.id.register_btn);
-        id_input = (EditText) findViewById(R.id.id_input);
-        pwd_input = (EditText) findViewById(R.id.pwd_input);
+        login_btn = findViewById(R.id.login_btn);
+        register_btn = findViewById(R.id.register_btn);
+        email_input = findViewById(R.id.email_input);
+        pwd_input = findViewById(R.id.pwd_input);
 
         login_btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                String strEmail = id_input.getText().toString().trim();
+                String strEmail = email_input.getText().toString().trim();
                 String strPwd = pwd_input.getText().toString().trim();
                 // String형 변수 email.pwd(edittext에서 받오는 값)으로 로그인하는것
 
                 mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>()
                 {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task)
-                            {
-                                if (task.isSuccessful())
-                                {
-                                    // 로그인 성공
-                                    Toast.makeText(Login.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Login.this, MainActivity.class);
-                                    startActivity(intent);
-                                }
-                                else
-                                {
-                                    // 로그인 실패
-                                    Toast.makeText(Login.this, "로그인 오류", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task)
+                    {
+                        if (task.isSuccessful())
+                        {
+                            // 로그인 성공
+                            Toast.makeText(Login.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            // 로그인 실패
+                            Toast.makeText(Login.this, "로그인 오류", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
         });
