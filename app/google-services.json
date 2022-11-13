@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "237168839715",
+    "firebase_url": "https://softwarepbl-team14-default-rtdb.firebaseio.com",
+    "project_id": "softwarepbl-team14",
+    "storage_bucket": "softwarepbl-team14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237168839715:android:89b46a2108fceeefb93596",
+        "android_client_info": {
+          "package_name": "com.swPBL.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237168839715-a0qflnfi3tal0tmo1e9pvj9vait2fri5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhJBUV7t3F9ulOa1YBXD8ylgdoCAtICe4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237168839715-a0qflnfi3tal0tmo1e9pvj9vait2fri5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
