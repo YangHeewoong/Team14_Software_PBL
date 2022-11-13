@@ -14,56 +14,67 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
-import java.util.Map;
+public class Register extends AppCompatActivity
+{
+    private FirebaseAuth mFirebaseAuth;
+    private DatabaseReference mDatabaseRef;
+    private EditText id_input, pwd_input, birth_input, nickname_input;
+    private Button register_btn;
 
-public class Register extends AppCompatActivity {
-
-    private EditText email_join;
-    private EditText pwd_join;
-    private EditText age_join,name_join;
-    private Button btn;
-    FirebaseAuth firebaseAuth;
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        email_join = (EditText) findViewById(R.id.sign_up_email);
-        pwd_join = (EditText) findViewById(R.id.sign_up_pwd);
-        age_join=(EditText)findViewById(R.id.sign_up_age);
-        name_join=(EditText)findViewById(R.id.sign_up_name);
-        btn = (Button) findViewById(R.id.sign_up_btn);
+        setContentView(R.layout.activity_register);
 
+        mFirebaseAuth = FirebaseAuth.getInstance();     // FirebaseAuth 인스턴스를 가져옴
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        id_input = (EditText) findViewById(R.id.id_input);
+        pwd_input = (EditText) findViewById(R.id.pwd_input);
+        birth_input=(EditText)findViewById(R.id.birth_input);
+        nickname_input=(EditText)findViewById(R.id.nickname_input);
+        register_btn = (Button) findViewById(R.id.register_btn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        register_btn.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                final String email = email_join.getText().toString().trim();
-                final String pwd = pwd_join.getText().toString().trim();
-                final String age = age_join.getText().toString().trim();
-                final String name = name_join.getText().toString().trim();
-                //공백인 부분을 제거하고 보여주는 trim();
+            public void onClick(View v)
+            {
+                final String strEmail = id_input.getText().toString().trim();
+                final String strPwd = pwd_input.getText().toString().trim();
+                final String strBirth = birth_input.getText().toString().trim();
+                final String strNickname = nickname_input.getText().toString().trim();
+                // 공백인 부분을 제거하고 보여주는 trim();
 
-
-                firebaseAuth.createUserWithEmailAndPassword(email, pwd)
-                        .addOnCompleteListener(Main2Activity.this, new OnCompleteListener<AuthResult>() {
+                mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>()
+                        {
                             @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+                            public void onComplete(@NonNull Task<AuthResult> task)
+                            {
+                                if (task.isSuccessful())
+                                {
+                                    FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
+                                    UserAccount account = new UserAccount();
+                                    account.setIdToken(firebaseUser.getUid());
+                                    account.setEmailId(firebaseUser.getEmail());
+                                    account.setPassword(strPwd);
 
-                                if (task.isSuccessful()) {
+                                    Toast.makeText(Register.this, "회원가입에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+
+                                    mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
+
                                     Intent intent = new Intent(Register.this, Login.class);
                                     startActivity(intent);
                                     finish();
-
-                                } else {
-                                    Toast.makeText(Main2Activity.this, "등록 에러", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(Register.this, "등록 에러", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
                             }

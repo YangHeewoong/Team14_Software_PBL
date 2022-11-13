@@ -14,22 +14,25 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:hint="id"
+        android:inputType="textEmailAddress"
         />
 
     <EditText
-        android:id="@+id/password_input"
+        android:id="@+id/pwd_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:hint="password"
+        android:inputType="textPassword"
         />
 
     <EditText
-        android:id="@+id/password_again"
+        android:id="@+id/pwd_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:hint="password again"
+        android:inputType="textPassword"
         />
 
     <EditText
@@ -38,6 +41,7 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:hint="birth"
+        android:inputType="text"
         />
 
     <EditText
@@ -46,10 +50,11 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:hint="nickname"
+        android:inputType="text"
         />
 
     <Button
-        android:id="@+id/search_btn"
+        android:id="@+id/register_btn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
