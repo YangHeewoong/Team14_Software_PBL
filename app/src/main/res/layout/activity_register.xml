@@ -25,33 +25,6 @@
         android:inputType="textPassword"
         />
 
-    <EditText
-        android:id="@+id/pwd_again"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:hint="password again"
-        android:inputType="textPassword"
-        />
-
-    <EditText
-        android:id="@+id/birth_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:hint="birth"
-        android:inputType="text"
-        />
-
-    <EditText
-        android:id="@+id/nickname_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:hint="nickname"
-        android:inputType="text"
-        />
-
     <Button
         android:id="@+id/register_btn"
         android:layout_width="250dp"

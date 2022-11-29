@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "237168839715",
-    "firebase_url": "https://softwarepbl-team14-default-rtdb.firebaseio.com",
-    "project_id": "softwarepbl-team14",
-    "storage_bucket": "softwarepbl-team14.appspot.com"
+    "project_number": "1035773497035",
+    "firebase_url": "https://software-pbl14-default-rtdb.firebaseio.com",
+    "project_id": "software-pbl14",
+    "storage_bucket": "software-pbl14.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:237168839715:android:89b46a2108fceeefb93596",
+        "mobilesdk_app_id": "1:1035773497035:android:9e348b30cd3e6e5419154e",
         "android_client_info": {
           "package_name": "com.swPBL.demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "237168839715-bao54fmn0avrojcoj561ja6qpb0oa2cb.apps.googleusercontent.com",
+          "client_id": "1035773497035-knk8rkjd3p2si96v2v4tpihjvl4mi2ot.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.swPBL.demo",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "237168839715-a0qflnfi3tal0tmo1e9pvj9vait2fri5.apps.googleusercontent.com",
+          "client_id": "1035773497035-ehjob0nrqb85ld23d1c6qug9hse8ngmk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBhJBUV7t3F9ulOa1YBXD8ylgdoCAtICe4"
+          "current_key": "AIzaSyDhrnHNwAhC_f267lGKGX0-JZMW3oXvTiE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "237168839715-a0qflnfi3tal0tmo1e9pvj9vait2fri5.apps.googleusercontent.com",
+              "client_id": "1035773497035-ehjob0nrqb85ld23d1c6qug9hse8ngmk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

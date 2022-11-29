@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class View_list extends AppCompatActivity
 {
@@ -13,6 +14,6 @@ public class View_list extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_list);
 
-        Intent intent2 = getIntent();
+        Intent intent = getIntent();
     }
 }

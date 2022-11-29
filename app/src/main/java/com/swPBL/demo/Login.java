@@ -34,15 +34,15 @@ public class Login extends AppCompatActivity
         mFirebaseAuth = FirebaseAuth.getInstance();     // FirebaseAuth 인스턴스를 가져옴
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
 
-        login_btn = findViewById(R.id.login_btn);
-        register_btn = findViewById(R.id.register_btn);
         email_input = findViewById(R.id.email_input);
         pwd_input = findViewById(R.id.pwd_input);
+        login_btn = findViewById(R.id.login_btn);
+        register_btn = findViewById(R.id.register_btn);
 
         login_btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
                 String strEmail = email_input.getText().toString().trim();
                 String strPwd = pwd_input.getText().toString().trim();

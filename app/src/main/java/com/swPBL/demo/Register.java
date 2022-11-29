@@ -22,7 +22,7 @@ public class Register extends AppCompatActivity
 {
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabaseRef;
-    private EditText email_input, pwd_input, birth_input, nickname_input;
+    private EditText email_input, pwd_input;
     private Button register_btn;
 
     @Override
@@ -36,8 +36,6 @@ public class Register extends AppCompatActivity
 
         email_input = findViewById(R.id.email_input);
         pwd_input = findViewById(R.id.pwd_input);
-        birth_input = findViewById(R.id.birth_input);
-        nickname_input = findViewById(R.id.nickname_input);
         register_btn = findViewById(R.id.register_btn);
 
         register_btn.setOnClickListener(new View.OnClickListener()
@@ -47,8 +45,6 @@ public class Register extends AppCompatActivity
             {
                 String strEmail = email_input.getText().toString().trim();
                 String strPwd = pwd_input.getText().toString().trim();
-                String strBirth = birth_input.getText().toString().trim();
-                String strNickname = nickname_input.getText().toString().trim();
                 // 공백인 부분을 제거하고 보여주는 trim();
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>()
                 {
@@ -69,7 +65,6 @@ public class Register extends AppCompatActivity
 
                             Intent intent = new Intent(Register.this, Login.class);
                             startActivity(intent);
-                            finish();
                         }
                         else
                         {
