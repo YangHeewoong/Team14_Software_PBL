@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_1"
+            android:id="@+id/tv_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -23,7 +23,7 @@
             android:textSize="30sp"
             android:text="카테고리"/>
         <TextView
-            android:id="@+id/tv_2"
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/teal_700"
@@ -34,21 +34,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <CheckBox
-                android:id="@+id/cb_1"
+                android:id="@+id/cb_lunch"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="점심"
                 />
             <CheckBox
-                android:id="@+id/cb_2"
+                android:id="@+id/cb_dinner"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="저녁"
                 />
             <CheckBox
-                android:id="@+id/cb_3"
+                android:id="@+id/cb_midnight"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 />
         </LinearLayout>
         <TextView
-            android:id="@+id/tv_3"
+            android:id="@+id/tv_people"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/teal_700"
@@ -69,30 +69,38 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:id="@+id/cb_4"
+                android:id="@+id/cb_2p"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2인"
                 />
             <CheckBox
-                android:id="@+id/cb_5"
+                android:id="@+id/cb_3p"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3인"
                 />
             <CheckBox
-                android:id="@+id/cb_6"
+                android:id="@+id/cb_4p"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4인"
                 android:layout_marginBottom="20dp"
                 />
+            <CheckBox
+                android:id="@+id/cb_5p"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5인이상(단체)"
+                android:layout_marginBottom="20dp"
+                />
         </LinearLayout>
         <TextView
-            android:id="@+id/tv_4"
+            android:id="@+id/tv_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/teal_700"
@@ -104,28 +112,28 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:id="@+id/cb_7"
+                android:id="@+id/cb_japanese"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="일식"
                 />
             <CheckBox
-                android:id="@+id/cb_8"
+                android:id="@+id/cb_western"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="양식"
                 />
             <CheckBox
-                android:id="@+id/cb_9"
+                android:id="@+id/cb_korean"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="한식"
                 />
             <CheckBox
-                android:id="@+id/cb_10"
+                android:id="@+id/cb_chinese"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,32 +145,32 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:id="@+id/cb_11"
+                android:id="@+id/cb_flour"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="치킨"
+                android:text="분식"
                 />
             <CheckBox
-                android:id="@+id/cb_12"
+                android:id="@+id/cb_fastfood"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="피자"
+                android:text="패스트푸드"
                 />
             <CheckBox
-                android:id="@+id/cb_13"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="푸드"
-                />
-            <CheckBox
-                android:id="@+id/cb_14"
+                android:id="@+id/cb_meat"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고기"
+                />
+            <CheckBox
+                android:id="@+id/cb_etc"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기타"
                 android:layout_marginBottom="20dp"
                 />
         </LinearLayout>

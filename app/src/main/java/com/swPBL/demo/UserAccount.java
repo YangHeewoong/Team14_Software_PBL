@@ -9,6 +9,8 @@ public class UserAccount
     private String emailId;     // 이메일 아이디
     private String password;    // 비밀번호
 
+    private String gender;
+
     public UserAccount() { }
 
     public String getIdToken()
@@ -39,5 +41,15 @@ public class UserAccount
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
+    public void setGender(String gender)
+    {
+        this.gender = gender;
     }
 }

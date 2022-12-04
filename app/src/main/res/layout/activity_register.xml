@@ -25,6 +25,25 @@
         android:inputType="textPassword"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/cb_male"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남"
+            />
+        <CheckBox
+            android:id="@+id/cb_female"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여"
+            />
+    </LinearLayout>
+
     <Button
         android:id="@+id/register_btn"
         android:layout_width="250dp"

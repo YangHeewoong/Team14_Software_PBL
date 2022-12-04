@@ -22,10 +22,10 @@ public class Recruit_category extends AppCompatActivity
     private DatabaseReference mDatabaseRef;
 
     private Button recruit_btn;
-    private CheckBox cb_1, cb_2, cb_3, cb_4, cb_5, cb_6, cb_7, cb_8, cb_9, cb_10, cb_11, cb_12, cb_13, cb_14;
+    private CheckBox cb_lunch, cb_dinner, cb_midnight, cb_2p, cb_3p, cb_4p, cb_5p, cb_japanese, cb_western, cb_korean, cb_chinese, cb_flour, cb_fastfood, cb_meat, cb_etc;
 
-    public ArrayList<String> checked = new ArrayList<>();
-    public ArrayList<Integer> checkList = new ArrayList<>();
+    public ArrayList<String> checked;
+    public ArrayList<Integer> checkList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,147 +36,160 @@ public class Recruit_category extends AppCompatActivity
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
 
+        checked = new ArrayList<>();
+        checkList = new ArrayList<>();
+
         recruit_btn = findViewById(R.id.recruit_btn);
-        cb_1 = findViewById(R.id.cb_1);
-        cb_2 = findViewById(R.id.cb_2);
-        cb_3 = findViewById(R.id.cb_3);
-        cb_4 = findViewById(R.id.cb_4);
-        cb_5 = findViewById(R.id.cb_5);
-        cb_6 = findViewById(R.id.cb_6);
-        cb_7 = findViewById(R.id.cb_7);
-        cb_8 = findViewById(R.id.cb_8);
-        cb_9 = findViewById(R.id.cb_9);
-        cb_10 = findViewById(R.id.cb_10);
-        cb_11 = findViewById(R.id.cb_11);
-        cb_12 = findViewById(R.id.cb_12);
-        cb_13 = findViewById(R.id.cb_13);
-        cb_14 = findViewById(R.id.cb_14);
+        cb_lunch = findViewById(R.id.cb_lunch);
+        cb_dinner = findViewById(R.id.cb_dinner);
+        cb_midnight = findViewById(R.id.cb_midnight);
+        cb_2p = findViewById(R.id.cb_2p);
+        cb_3p = findViewById(R.id.cb_3p);
+        cb_4p = findViewById(R.id.cb_4p);
+        cb_5p = findViewById(R.id.cb_5p);
+        cb_japanese = findViewById(R.id.cb_japanese);
+        cb_western = findViewById(R.id.cb_western);
+        cb_korean = findViewById(R.id.cb_korean);
+        cb_chinese = findViewById(R.id.cb_chinese);
+        cb_flour = findViewById(R.id.cb_flour);
+        cb_fastfood = findViewById(R.id.cb_fastfood);
+        cb_meat = findViewById(R.id.cb_meat);
+        cb_etc = findViewById(R.id.cb_etc);
 
         recruit_btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                if (cb_1.isChecked())
+                if (cb_lunch.isChecked())
                 {
-                    checked.add(cb_1.getText().toString().trim());
+                    checked.add(cb_lunch.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_2.isChecked())
+                if (cb_dinner.isChecked())
                 {
-                    checked.add(cb_2.getText().toString().trim());
+                    checked.add(cb_dinner.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_3.isChecked())
+                if (cb_midnight.isChecked())
                 {
-                    checked.add(cb_3.getText().toString().trim());
+                    checked.add(cb_midnight.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_4.isChecked())
+                if (cb_2p.isChecked())
                 {
-                    checked.add(cb_4.getText().toString().trim());
+                    checked.add(cb_2p.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_5.isChecked())
+                if (cb_3p.isChecked())
                 {
-                    checked.add(cb_5.getText().toString().trim());
+                    checked.add(cb_3p.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_6.isChecked())
+                if (cb_4p.isChecked())
                 {
-                    checked.add(cb_6.getText().toString().trim());
+                    checked.add(cb_4p.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_7.isChecked())
+                if (cb_5p.isChecked())
                 {
-                    checked.add(cb_7.getText().toString().trim());
+                    checked.add(cb_5p.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_8.isChecked())
+                if (cb_japanese.isChecked())
                 {
-                    checked.add(cb_8.getText().toString().trim());
+                    checked.add(cb_japanese.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_9.isChecked())
+                if (cb_western.isChecked())
                 {
-                    checked.add(cb_9.getText().toString().trim());
+                    checked.add(cb_western.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_10.isChecked())
+                if (cb_korean.isChecked())
                 {
-                    checked.add(cb_10.getText().toString().trim());
+                    checked.add(cb_korean.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_11.isChecked())
+                if (cb_chinese.isChecked())
                 {
-                    checked.add(cb_11.getText().toString().trim());
+                    checked.add(cb_chinese.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_12.isChecked())
+                if (cb_flour.isChecked())
                 {
-                    checked.add(cb_12.getText().toString().trim());
+                    checked.add(cb_flour.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_13.isChecked())
+                if (cb_fastfood.isChecked())
                 {
-                    checked.add(cb_13.getText().toString().trim());
+                    checked.add(cb_fastfood.getText().toString().trim());
                     checkList.add(1);
                 }
                 else
                 {
                     checkList.add(0);
                 }
-                if (cb_14.isChecked())
+                if (cb_meat.isChecked())
                 {
-                    checked.add(cb_14.getText().toString().trim());
+                    checked.add(cb_meat.getText().toString().trim());
+                    checkList.add(1);
+                }
+                else
+                {
+                    checkList.add(0);
+                }
+                if (cb_etc.isChecked())
+                {
+                    checked.add(cb_etc.getText().toString().trim());
                     checkList.add(1);
                 }
                 else

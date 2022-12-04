@@ -13,7 +13,5 @@ public class View_list extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_list);
-
-        Intent intent = getIntent();
     }
 }
