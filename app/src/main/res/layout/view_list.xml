@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="#f0fff0"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:id='@+id/imageView'
-        android:layout_width="80dp"
-        android:layout_height="80dp"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="10dp"
+        android:gravity="center"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="demo"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/teal_700"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="유사도 : 76%"
-            android:textSize="24sp"
-            android:textColor="@android:color/darker_gray"/>
+            android:text="모집 조회"
+            android:textColor="@color/teal_700"
+            android:textSize="40sp" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>
