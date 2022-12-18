@@ -8,6 +8,8 @@
     android:background="#f0fff0"
     tools:context=".MainActivity">
 
+    <include layout="@layout/toolbar" />
+
     <Button
         android:id="@+id/recruit_btn"
         android:layout_width="250dp"

@@ -12,6 +12,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/toolbar" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -31,7 +33,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:hint="방 제목을 입력하세요."
-                android:privateImeOptions="defaultInputmode=korean"
                 />
         </LinearLayout>
 
@@ -40,10 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:textColor="@color/teal_700"
             android:textSize="30sp"
+            android:layout_gravity="center"
             android:text="카테고리"
             />
         <TextView
@@ -57,6 +58,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/sun'
+                />
             <CheckBox
                 android:id="@+id/cb_lunch"
                 android:layout_weight="1"
@@ -64,12 +71,24 @@
                 android:layout_height="wrap_content"
                 android:text="점심"
                 />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/moon'
+                />
             <CheckBox
                 android:id="@+id/cb_dinner"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="저녁"
+                />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/midnight'
                 />
             <CheckBox
                 android:id="@+id/cb_midnight"
@@ -91,7 +110,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/person2'
+                />
             <CheckBox
                 android:id="@+id/cb_2p"
                 android:layout_weight="1"
@@ -99,12 +123,24 @@
                 android:layout_height="wrap_content"
                 android:text="2인"
                 />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/person3'
+                />
             <CheckBox
                 android:id="@+id/cb_3p"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3인"
+                />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/person4'
                 />
             <CheckBox
                 android:id="@+id/cb_4p"
@@ -134,13 +170,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/japanese'
+                />
             <CheckBox
                 android:id="@+id/cb_japanese"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="일식"
+                />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/western'
                 />
             <CheckBox
                 android:id="@+id/cb_western"
@@ -149,12 +196,29 @@
                 android:layout_height="wrap_content"
                 android:text="양식"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/korean'
+                />
             <CheckBox
                 android:id="@+id/cb_korean"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="한식"
+                />
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/chinese'
                 />
             <CheckBox
                 android:id="@+id/cb_chinese"
@@ -167,7 +231,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/flour'
+                />
             <CheckBox
                 android:id="@+id/cb_flour"
                 android:layout_weight="1"
@@ -175,14 +244,12 @@
                 android:layout_height="wrap_content"
                 android:text="분식"
                 />
-            <CheckBox
-                android:id="@+id/cb_fastfood"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="패스트푸드"
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/meat'
                 />
-
             <CheckBox
                 android:id="@+id/cb_meat"
                 android:layout_weight="1"
@@ -190,6 +257,27 @@
                 android:layout_height="wrap_content"
                 android:text="고기"
                 />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="9dp"
+                android:layout_width='30dp'
+                android:layout_height='30dp'
+                android:src='@drawable/fastfood'
+                />
+            <CheckBox
+                android:id="@+id/cb_fastfood"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-10dp"
+                android:text="패스트푸드"
+                />
+
             <CheckBox
                 android:id="@+id/cb_etc"
                 android:layout_weight="1"
@@ -199,7 +287,6 @@
                 android:layout_marginBottom="20dp"
                 />
         </LinearLayout>
-
         <Button
             android:id="@+id/recruit_btn"
             android:layout_width="wrap_content"
