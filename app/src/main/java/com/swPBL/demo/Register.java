@@ -62,7 +62,7 @@ public class Register extends AppCompatActivity
                         {
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
                             UserAccount account = new UserAccount();
-                            account.setIdToken(firebaseUser.getUid());
+                            // account.setIdToken(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);
                             if (cb_male.isChecked())
@@ -77,6 +77,7 @@ public class Register extends AppCompatActivity
                             Toast.makeText(Register.this, "회원가입에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
+                            mDatabaseRef.child("UserID").child(firebaseUser.getUid()).setValue(firebaseUser.getUid());
 
                             Intent intent = new Intent(Register.this, Login.class);
                             startActivity(intent);

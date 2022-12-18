@@ -14,7 +14,7 @@ public class UserAccount
 
     public UserAccount() { }
 
-    public String getIdToken()
+    /*public String getIdToken()
     {
         return idToken;
     }
@@ -22,7 +22,7 @@ public class UserAccount
     public void setIdToken(String idToken)
     {
         this.idToken = idToken;
-    }
+    }*/
 
     public String getEmailId()
     {

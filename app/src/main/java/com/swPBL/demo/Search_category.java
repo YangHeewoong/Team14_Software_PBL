@@ -22,24 +22,24 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Search_category extends AppCompatActivity
 {
-    private FirebaseAuth mFirebaseAuth;
-    private DatabaseReference mDatabaseRef;
-    private ChildEventListener mChild;
-
     private Button search_btn;
     private CheckBox cb_lunch, cb_dinner, cb_midnight, cb_2p, cb_3p, cb_4p, cb_5p, cb_japanese, cb_western, cb_korean, cb_chinese, cb_flour, cb_fastfood, cb_meat, cb_etc;
-    private int count, similar;
-    private TextView tv_category;
 
-    public ArrayList<Integer> checkList;
-    public ArrayList<Integer> recruitList;
-    public ArrayList<String> titleList;
+    private ArrayList<Integer> checkList;
+    private ArrayList<Integer> iChecked;
+
+    private int count, similar;
+
+    private FirebaseAuth mFirebaseAuth;
+    private DatabaseReference mDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,14 +47,8 @@ public class Search_category extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_category);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
-
         checkList = new ArrayList<>();
-        titleList = new ArrayList<>();
-        recruitList = new ArrayList<>();
-
-        count = 0;
+        iChecked = new ArrayList<>();
 
         search_btn = findViewById(R.id.search_btn);
         cb_lunch = findViewById(R.id.cb_lunch);
@@ -72,7 +66,6 @@ public class Search_category extends AppCompatActivity
         cb_fastfood = findViewById(R.id.cb_fastfood);
         cb_meat = findViewById(R.id.cb_meat);
         cb_etc = findViewById(R.id.cb_etc);
-        tv_category = findViewById(R.id.tv_category);
 
         search_btn.setOnClickListener(new View.OnClickListener()
         {
@@ -200,10 +193,60 @@ public class Search_category extends AppCompatActivity
                 {
                     checkList.add(0);
                 }
-                //카테고리 개수만큼 체크박스 개수 수정.
-
+                Log.v("TAG", "196번");
+                // getValue();
+                /*for (int i = 0; i < checkList.size(); i++)
+                {
+                    if (checkList.get(i).equals(iChecked.get(i)))
+                    {
+                        count += 1;
+                    }
+                }
+                similar = count / 14 * 100;
+                Log.v("TAG", "similar");
+                mDatabaseRef.child("Similarity").child("asd").setValue(similar);
+                Log.v("TAG", "208번");*/
                 Intent intent = new Intent(Search_category.this, View_list.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void getValue()
+    {
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("SoftwarePBL-Team14");
+        mDatabaseRef.child("iChecked").addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    iChecked.clear();
+                    mDatabaseRef.child("iChecked").child(dataSnapshot.toString()).addValueEventListener(new ValueEventListener()
+                    {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot1)
+                        {
+                            for (DataSnapshot dataSnapshot1 : snapshot1.getChildren())
+                            {
+                                int iValue = dataSnapshot1.getValue(Integer.class);
+                                iChecked.add(iValue);
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error)
+                        {
+
+                        }
+                    });
+                    Log.v("TAG", "245번");
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+                Log.v("TAG", "cancel2");
             }
         });
     }

@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:hint="방 제목을 입력하세요."
+                android:privateImeOptions="defaultInputmode=korean"
                 />
         </LinearLayout>
 
